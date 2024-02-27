@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import styles from './App.module.css'
+import actions from "./store/actions";
+import { Header, SubHeader, RenderList } from './Components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = (props) => {
+  const {
+    loadClients,
+    clients = []
+  } =props
+  const [displayClient , setClient] = useState([])
+  useEffect(()=>{
+    loadClients()
+  },[loadClients])
+
+  useEffect(()=>{
+    setClient(clients)
+  },[clients])
+  return(
+    <div>
+      <div className={styles.containerApp}>
+        <Header/>
+        <SubHeader setClient={setClient}/>
+      </div>
+        <RenderList displayClient ={displayClient} setClient={setClient}/>
     </div>
-  );
-}
+  )
+  };
 
-export default App;
+  const mapStateToProps = ({ clients }) => ({ clients });
+
+   const mapDispatchToProps = (dispatch) => ({
+    saveClient: (client) => dispatch(actions.saveClient(client)),
+    loadClients: () => dispatch(actions.loadClients()),
+  });
+
+
+export default  connect(
+  mapStateToProps,
+  mapDispatchToProps
+  ) (App);

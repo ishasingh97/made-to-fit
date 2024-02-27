@@ -1,0 +1,18 @@
+.modalDialog{
+        max-width : 1000px;
+    .btn-close{
+        display: none;
+    }
+}
+.body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.form{
+    display: flex;
+}
+.labelWrapper{
+    width: 48%;
+}
