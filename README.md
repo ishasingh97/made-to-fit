@@ -1,4 +1,4 @@
-#Tailor-Customer Profile Management Web App (Made to fit)
+`#Tailor-Customer Profile Management Web App (Made to fit)
 This web app enables tailors to efficiently manage customer profiles, including personal details, measurements, style preferences, and order history.
 
 ##Features
@@ -36,7 +36,7 @@ The architecture allows for easy scalability to accommodate a growing customer b
 
 ##Summary
 The integration of IndexedDB and PWA features enhances the tailor-customer profile management web app by providing offline access, improved performance, app-like experience, and robust data storage capabilities, thereby empowering tailors to efficiently manage customer relationships and streamline their workflow.
-
+`
 
 
 
