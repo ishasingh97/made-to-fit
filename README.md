@@ -1,6 +1,6 @@
 # Tailor-Customer Profile Management Web App (Made to Fit)
 
-This web app enables tailors to efficiently manage customer profiles, including personal details, measurements, style preferences, and order history.
+This web app enables tailors to efficiently manage customer profiles, including personal details and measurements.
 
 ## Features
 
